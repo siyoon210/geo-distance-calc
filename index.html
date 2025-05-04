@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>좌표간 거리계산</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script type="text/javascript"
+            src="//dapi.kakao.com/v2/maps/sdk.js?appkey=58155b619ba1503ba84ea1937f578d74"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js" defer></script>
+    <link rel="icon" href="icon.svg" type="image/svg+xml">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+<div class="container mx-auto p-4 max-w-6xl flex items-center justify-center min-h-screen">
+    <div class="flex flex-col w-full mb-10">
+        <h1 class="text-2xl font-bold mb-6">좌표간 거리계산기</h1>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div class="lg:col-span-2 h-[500px] md:h-[600px] bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="h-full relative bg-slate-100 rounded-lg overflow-hidden">
+                    <div id="map" class="absolute inset-0 flex items-center justify-center bg-slate-200">
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-md">
+                <div class="p-6">
+                    <h2 class="text-xl font-semibold mb-4">좌표 입력</h2>
+                    <div class="space-y-6">
+                        <div class="space-y-2">
+                            <label for="coordinate1" class="block text-sm font-medium text-gray-700">
+                                좌표1
+                            </label>
+                            <input
+                                    id="coordinate1"
+                                    type="text"
+                                    placeholder="37.5008512, 127.0877208"
+                                    value="37.5008512, 127.0877208"
+                                    class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                    onchange="extractTwoNumbers(this)"
+                            />
+                        </div>
+
+                        <div class="space-y-2">
+                            <label for="coordinate2" class="block text-sm font-medium text-gray-700">
+                                좌표2
+                            </label>
+                            <input
+                                    id="coordinate2"
+                                    type="text"
+                                    placeholder="37.5122612, 127.1000336"
+                                    value="37.5122612, 127.1000336"
+                                    class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                    onchange="extractTwoNumbers(this)"
+                            />
+                        </div>
+                        <button
+                                id="show-distance"
+                                type="submit"
+                                class="w-full bg-blue-600 hover:bg-blue-700 hover:cursor-pointer text-white font-medium py-2 px-4 rounded-md transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                        >
+                            좌표간 거리 계산
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
