@@ -1,1 +1,1 @@
-https://geo-distance-calc-beta.vercel.app/
+웹앱 URL https://geo-distance-calc-beta.vercel.app/
