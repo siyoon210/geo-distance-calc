@@ -5,7 +5,7 @@
     <title>좌표간 거리계산</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script type="text/javascript"
-            src="//dapi.kakao.com/v2/maps/sdk.js?appkey=58155b619ba1503ba84ea1937f578d74"></script>
+            src="//dapi.kakao.com/v2/maps/sdk.js?appkey=58155b619ba1503ba84ea1937f578d74&libraries=services"></script>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/app.js" defer></script>
     <link rel="icon" href="icon.svg" type="image/svg+xml">
@@ -62,11 +62,40 @@
                         </button>
                     </div>
 
+                    <div class="mt-6 pt-6 border-t border-gray-200 bg-white shadow-md w-full">
+                        <h2 class="text-xl font-semibold mb-4">장소 검색</h2>
+                        <div class="space-y-4">
+                            <div class="space-y-2">
+                                <div class="flex flex-col">
+                                    <div class="flex">
+                                        <input
+                                                id="keyword"
+                                                type="text"
+                                                placeholder="올림픽로 300 / 잠실역"
+                                                value=""
+                                                class="flex-1 px-3 py-2 border border-gray-300 rounded-l-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                        />
+                                        <button
+                                                id="search-place"
+                                                type="submit"
+                                                class="bg-green-600 hover:bg-green-700 hover:cursor-pointer text-white font-medium py-2 px-4 rounded-r-md transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+                                        >
+                                            검색
+                                        </button>
+                                    </div>
+                                    <p id="search-success" class="hidden text-xs text-green-600 mt-1 pl-1">클립보드에 복사되었습니다!</p>
+                                    <p id="search-fail" class="hidden text-xs text-red-600 mt-1 pl-1">검색된 장소가 없습니다.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="mt-6 pt-6 border-t border-gray-200">
                         <h3 class="text-sm font-medium mb-2">사용 가이드</h3>
                         <ol class="text-sm text-gray-600 list-decimal pl-4 space-y-1">
-                            <li>좌표값은 대충 입력해도 포맷에 맞게 들어감</li>
-                            <li>마우스 클릭으로 지도에 직접 그리기 가능</li>
+                            <li>좌표값은 숫자 2개 추출되면 포맷에 맞게 들어갑니다.</li>
+                            <li>마우스 클릭으로 지도에 직접 그리기 가능합니다.</li>
+                            <li>장소검색 성공시 좌표가 클립보드로 복사됩니다</li>
                         </ol>
                     </div>
                 </div>
