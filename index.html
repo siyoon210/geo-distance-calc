@@ -74,6 +74,7 @@
                                                 placeholder="올림픽로 300 / 잠실역"
                                                 value=""
                                                 class="flex-1 px-3 py-2 border border-gray-300 rounded-l-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                                onkeydown="if (event.key === 'Enter') document.getElementById('search-place').click();"
                                         />
                                         <button
                                                 id="search-place"
@@ -83,7 +84,7 @@
                                             검색
                                         </button>
                                     </div>
-                                    <p id="search-success" class="hidden text-xs text-green-600 mt-1 pl-1">클립보드에 복사되었습니다!</p>
+                                    <p id="search-success" class="hidden text-xs text-green-600 mt-1 pl-1">장소 검색 좌표</p>
                                     <p id="search-fail" class="hidden text-xs text-red-600 mt-1 pl-1">검색된 장소가 없습니다.</p>
                                 </div>
                             </div>
